@@ -43,7 +43,6 @@ export default function Home(){
             <div className='relative'>
             
             <div className='relative'>
-                <Navbar/>
                 <section>
                     <div className="max-w-screen-xl mx-auto px-4 py-15 gap-12 text-gray-600 overflow-hidden md:px-8 md:flex">
                         <div className='flex-none space-y-5 max-w-xl md:flex md:flex-col md:justify-center'>
