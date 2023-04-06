@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Batiment {
+  id       Int      @id @default(autoincrement())
+  nom      String
+  adresse  String
+  appartements Appartement[]
+}
+
+model Appartement {
+  id                    Int         @id @default(autoincrement())
+  titre                 String
+  description           String
+  prix                  Int
+  nombre_chambres       Int
+  surface               Int
+  etage                 Int?
+  adresse               String?
+  ville                 String?
+  code_postal           String?
+  pays                  String?
+  date_disponibilite    DateTime?
+  date_mise_a_jour      DateTime?   @updatedAt
+  date_creation         DateTime    @default(now())
+  type_de_bien          String
+  type_de_transaction   String
+  meuble                Boolean     @default(false)
+  balcon                Boolean     @default(false)
+  terrasse              Boolean     @default(false)
+  parking               Boolean     @default(false)
+  ascenseur             Boolean     @default(false)
+  cave                  Boolean     @default(false)
+  vue_sur_la_mer        Boolean     @default(false)
+  vue_sur_la_ville      Boolean     @default(false)
+  proximite_commerces   Boolean     @default(false)
+  proximite_transports  Boolean     @default(false)
+  images                Image[]
+  batiment              Batiment?   @relation(fields: [batimentId], references: [id])
+  batimentId            Int?
+}
+
+
+model Image {
+  id          Int     @id @default(autoincrement())
+  url         String
+  appartement Appartement @relation(fields: [appartementId], references: [id])
+  appartementId Int
+}
+
