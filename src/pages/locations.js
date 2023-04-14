@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client"
+import Card from "../../components/card";
 
 const prisma = new PrismaClient();
 
@@ -21,6 +22,15 @@ export default function Locations({appartement =[]}) {
 
 
     return (
-        <p>{appartement.map(appartement => appartement.nom)}</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-6 w-full">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+
+
+        </div>
     )
 }
