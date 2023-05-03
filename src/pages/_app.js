@@ -6,9 +6,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
 
     <>
-      <AuthProvider session={session}>
+     
         <Component {...pageProps} />  
-      </AuthProvider>
+     
         
     </>
     
