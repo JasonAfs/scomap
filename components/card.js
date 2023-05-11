@@ -3,7 +3,7 @@ const Card = ({myAppart}) => {
 
     return (
         
-        <a href="#" class="block rounded-lg p-4 shadow-sm shadow-indigo-100">
+        <a href="#" class="block rounded-lg  shadow-sm shadow-indigo-100">
   <img
     alt="Home"
     src={"http://localhost:1337"+ myAppart.images.data[0].attributes.formats.small.url}

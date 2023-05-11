@@ -23,7 +23,7 @@ export default function Locations({apartements}) {
     
     
     return (
-        <><div class="max-w-screen-xl mx-auto px-4 py-15 gap-12 text-gray-600 overflow-hidden md:px-8 md:flex">
+        <><div class="max-w-screen-xl mx-auto px-4 py-15 gap-12 text-gray-600 overflow-hidden md:px-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
             {
         
                 apartements.data.map((apartement) => {
